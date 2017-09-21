@@ -1,0 +1,52 @@
+/* @CHARSET "ISO-8859-1";*/
+
+/**
+ * index.scss
+ * - Add any styles you want here!
+ */
+
+body {
+  background: #a3bbe0;
+  
+}
+
+.container{
+  display: grid;
+  background: #a3bbe0;
+  grid-gap: 0.5em;
+  padding: 10px, 10px, 10px, 10px;
+}
+
+#login_title {
+  display: grid;
+  background: #e1e5ed;
+  
+}
+
+#login_body  {
+  display: grid;
+  background: #a3bbe0;
+  grid-gap: 0.5em;
+  grid-template-columns: 30% 70%;
+  
+  padding: 10px;
+}
+
+#login_form_div{
+  display: grid;
+  background: #e1e5ed;
+  padding: 10px;
+}
+
+#caseroll{
+  display: grid;
+  background: #e1e5ed;
+}
+
+#login_form{
+  margin: 100px 0px 100px 0px; /*  top, left, buttom, right*/
+}
+
+.loginInfo{
+   padding: 10px 10px 10px 10px; /* top, left, buttom, right */
+}
