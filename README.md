@@ -21,7 +21,8 @@ Personal expenses will be private to each user; other members of the house hold 
 These are all other users who are not household managers. These users are able to view and enter their household expenses.
 Note: User will have full control over their personal data. 
 <h5> 1.3	Core Features </h5> 
-<ul> Registration/Un-registration 
+<ul> 
+    <li> User registration and un-registration </li>
     <li> Allows users to register and create house hold groups. </li>
     <li> Allows the addition of new users into an existing household. </li>
     <li> A user can be remove from a household by the Household manager </li>
