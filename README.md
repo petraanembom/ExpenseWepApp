@@ -19,7 +19,7 @@ Personal expenses will be private to each user; other members of the house hold 
 <h5> 1.2.3.2	Regular users </h5> 
 These are all other users who are not household managers. These users are able to view and enter their household expenses.
 Note: User will have full control over their personal data. 
-<h5> 1.3	Core Features </h5> 
+<h3> 1.3	Core Features </h3> 
 <ul> 
     <li> User registration and un-registration </li>
     <li> Allows users to register and create house hold groups. </li>
