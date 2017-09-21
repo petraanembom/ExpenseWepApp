@@ -1,5 +1,4 @@
-# ExpenseWepApp
-Introduction to HouseholdExpense Web application
+# Introduction to HouseholdExpense Web application
 
 <h3> 1.1	What is HouseholdExpense webapp? </h3> <br>
 <p> HouseholdExpense is an internet browser application that keeps track the household expenses and personal expenses of users and provides both summary and detail reports for household and personal user expenses on a monthly and daily basis, respectively.</p> <br>  
@@ -52,4 +51,4 @@ This will be implemented using JSP/HTML webpages.
 <h4> 1.6.3	Controller </h4>
 Java servlets will be used as a controller. 
 
-See disign specification document for a detailed documentation on this project (Design is still in progress) 
+# See disign specification document for a detailed documentation on this project (Design is still in progress) 
