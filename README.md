@@ -27,9 +27,8 @@ Note: User will have full control over their personal data.
     <li> A user can be remove from a household by the Household manager </li>
     <li> A user can register without belonging to any household. In this case he/she can only use the personal expense feature. 
 Data collection  </li>
-    <li> Collect household and personal expenses from users.
-Data presentation </li>
-    <il> Data will be presented to the user in two formats; summary and detailed ( The scopes of these presentation types are well specified in the design documentation) </li>
+    <li> Collect household and personal expenses from users. </li>
+    <li> Data presentation; data will be presented to the user in two formats; summary and detailed ( The scopes of these presentation types are well specified in the design documentation) </li>
 </ul> 
 
 <h3> 1.4	How is data collected from the users? </h3>
