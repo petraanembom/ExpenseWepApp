@@ -1,6 +1,6 @@
-# Introduction to HouseholdExpense Web application
+# Introduction to Expense Web application
 
-<h3> 1.1	What is HouseholdExpense webapp? </h3> <br>
+<h3> 1.1	What is HouseholdExpense (or Expense) webapp? </h3> <br>
 <p> HouseholdExpense is an internet browser application that keeps track the household expenses and personal expenses of users and provides both summary and detail reports for household and personal user expenses on a monthly and daily basis, respectively.</p> <br>  
 
 <h3> 1.2	Definitions </h3> 
