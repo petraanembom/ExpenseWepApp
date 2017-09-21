@@ -22,31 +22,33 @@ These are all other users who are not household managers. These users are able t
 Note: User will have full control over their personal data. 
 <h5> 1.3	Core Features </h5> 
 <ul> Registration/Un-registration 
-    <li> •	Allows users to register and create house hold groups. 
-    <il> •	Allows the addition of new users into an existing household.
-    <il> •	A user can be remove from a household by the Household manager 
-    <il> •	A user can register without belonging to any household. In this case he/she can only use the personal expense feature. 
-Data collection 
-    <il> •	Collect household and personal expenses from users.
-Data presentation
-    <il> •	Data will be presented to the user in two formats; summary and detailed ( The scopes of these presentation types are well specified in the design documentation) </il>
+    <li> Allows users to register and create house hold groups. </li>
+    <li> Allows the addition of new users into an existing household. </li>
+    <li> A user can be remove from a household by the Household manager </li>
+    <li> A user can register without belonging to any household. In this case he/she can only use the personal expense feature. 
+Data collection  </li>
+    <li> Collect household and personal expenses from users.
+Data presentation </li>
+    <il> Data will be presented to the user in two formats; summary and detailed ( The scopes of these presentation types are well specified in the design documentation) </li>
 </ul> 
-1.4	How is data collected from the users?
-A webpage form will be provided for users to enter the data which shall be stored in a remote database. Data enter will likely only be the amount spent, expense type, and a short description (if need be). 
-1.5	Security Features 
-1.5.1	Authentication 
-User will require a valid username and password to login into the application.
-1.5.2	Password Recovery
-Password will be recovered via email links or phone links (see the design documentation on how this feature is implemented). 
-1.5.3	Data access level
-Data access level will restrict users to have access only to authorized data. The will be two access levels for the users; personal access level and household access level, which are user specific, and household specific respectively. 
 
-1.6	Overview of Model View Controller Implementation for this Webapp
+<h3> 1.4	How is data collected from the users? </h3>
+A webpage form will be provided for users to enter the data which shall be stored in a remote database. Data enter will likely only be the amount spent, expense type, and a short description (if need be). 
+<h3> 1.5	Security Features </h3> 
+<h4> 1.5.1	Authentication </h4>
+User will require a valid username and password to login into the application.
+<h4> 1.5.2	Password Recovery </h4>
+Password will be recovered via email links or phone links (see the design documentation on how this feature is implemented). 
+<h4> 1.5.3	Data access level </h4>
+<p> Data access level will restrict users to have access only to authorized data. The will be two access levels for the users; personal access level and household access level, which are user specific, and household specific respectively. </p>
+
+<h3> 1.6	Overview of Model View Controller Implementation for this Webapp </h3>
 The design of this web application will implement the Model-View-Controller concept. 
-1.6.1	Model
+<h4> 1.6.1	Model </h4>
 This will be implemented with java using Plain Old Java Objects (POJO). Dependencies among these objects will be used to resolve dependencies among these objects (see design document for more details) 
-1.6.2	View 
+<h4> 1.6.2	View  </h4>
 This will be implemented using JSP/HTML webpages. 
-1.6.3	Controller 
+<h4> 1.6.3	Controller </h4>
 Java servlets will be used as a controller. 
 
+See disign specification document for a detailed documentation on this project (Design is still in progress) 
