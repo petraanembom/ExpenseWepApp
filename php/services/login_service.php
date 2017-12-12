@@ -1,6 +1,7 @@
 <?php
 
 namespace webapp\service;
+
 session_start();
 
 //scripts requirements 
