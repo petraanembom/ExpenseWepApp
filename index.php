@@ -1,4 +1,9 @@
 
+
+<?php
+  session_start()
+ ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +13,11 @@
 	<!-- Specify required php scrips-->
 	<?php
 		require $_SERVER['DOCUMENT_ROOT']."/env_params/php_path_constants.php";
+
+		//By removing session variable, user will be forced to sign in with the username and password
+		//remove session variable
+		session_unset();
+		session_destroy();
 	?>
 
 </head>
@@ -41,9 +51,7 @@
 
 		</form>
 
-		
-
-
+	
 	</div>
 </div>
 
