@@ -2,6 +2,7 @@
 	
 	//PAGE FILE PATHS 
      define("INDEX_PAGE" , "/index.php");
+     define("LOGIN_PAGE" , "/index.php"); //Aiase to the index page
      define("SIGNUP_PAGE" , "/html/signup_page.php");
      define("HOME_PAGE" , "/html/home_page.php" );
 

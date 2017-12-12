@@ -1,6 +1,7 @@
 <?php
 
 namespace webapp\service;
+session_start();
 
 //scripts requirements 
 require $_SERVER['DOCUMENT_ROOT']."/env_params/php_path_constants.php";
@@ -26,6 +27,8 @@ function authCredential($username, $password){
       	//httpResponse Class not found error was experience here 
 		//httpResponse::redirect(SINGUP_SERVICE ,array("name" => "value"), true, HTTP_REDIRECT_PERM);
 		echo "logging in...";
+
+		$_SESSION["username"] = $username; 
 
 		//TODO: redirect using echo for now.
 		//the plan is to use the http package functions 	
