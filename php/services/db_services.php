@@ -49,13 +49,13 @@ class DataSource{
 		$conn = $this->connectToDb(); 
 
 		//TODO:Catch exceptional case were the QUERY fails 
-		//$querryStmt = "SELECT username, passwd FROM users;";  
+		//$querryStmt = "SELECT username, password FROM users;";  
 
 		//TODO: Write a client side script with javascript and a
 		// server side script to validate the format of the input 
 		// This is to prevent SQL injection attacks 
 		
-		$querryStmt = "SELECT username, passwd FROM users WHERE username='$username' AND passwd = '$password'"; 
+		$querryStmt = "SELECT username, password FROM users WHERE username='$username' AND password = '$password'"; 
 
 		//check if connection is oppen
 		if($conn != NULL) {
