@@ -25,7 +25,7 @@
 			 <h3> Enter all fields to create and account </h3>
 
 			<!--implement javascript to validate all form information-->
-			<form action=<?php echo SINGUP_SERVICE ?> type="GET">
+			<form action=<?php echo SINGUP_SERVICE ?> method="post">
 				<div>
 				<input type="text" name="firstname" placeholder="FIRST NAME"> 
 				</div>
@@ -38,9 +38,9 @@
 				 	<input type="text" name="username" placeholder="USERNAME"> 
 				 </div>
 
-				<div>
+				<!--div>
 					<input type="text" name="data_of_birth" placeholder="DATE OF BIRTH">
-				</div>
+				</div-->
 				
 				<div>
 					<input type="email" name="email" placeholder="EMAIL">
@@ -51,11 +51,11 @@
 				</div>
 
 				<div>
-					<input type="password" name="password" placeholder="RE-PASSWORD">
+					<input type="password" name="re-password" placeholder="RE-PASSWORD">
 				</div>
 
 				<div>
-					<input type="submit" name="REGISTER">
+					<input type="submit">
 				</div>
 				
 			</form>
