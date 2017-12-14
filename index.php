@@ -31,7 +31,7 @@
 <!--LOGIN INPUT -->
 <div>
 	<div>
-		<form action = <?php echo LOGIN_SERVICE ?> method="GET">
+		<form action = <?php echo LOGIN_SERVICE ?> method="POST">
 			<div>
 				<input type="text" name="username" placeholder="USERNAME">
 			</div>
