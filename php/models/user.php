@@ -13,7 +13,7 @@ class User
 	private $password;
 	private $houseId;
 	private $useID;
-	private $dateOfBirth; 
+	//private $dateOfBirth; 
 	
 	function __construct()
 	{
@@ -35,7 +35,7 @@ class User
 		$user->setFirstname($arrayOfuserAttributes['firstname']);
 		$user->setLastname($arrayOfuserAttributes['lastname']);
 		$user->setUsername($arrayOfuserAttributes['username']);
-		$user->setDateOfBirth($arrayOfuserAttributes['data_of_birth']);
+		//$user->setDateOfBirth($arrayOfuserAttributes['data_of_birth']);
 		$user->setEmail($arrayOfuserAttributes['email']);
 		$user->setPassword($arrayOfuserAttributes['password']); //javascript will implement password authentication protocols
 		return $user; 
@@ -71,9 +71,9 @@ class User
 		return $this->userId;
 	}
 
-	function getDateOfBirth(){
+	/*function getDateOfBirth(){
 		return $this->dateOfBirth;
-	}
+	}*/
 
 	/*******************************************************/
 	/**Define setter function*/
@@ -101,9 +101,9 @@ class User
 	function setUserId($userId){
 		$this->userId =  $userId;
 	}
-	function setDateOfBirth( $dateOfBirth){
+	/*function setDateOfBirth( $dateOfBirth){
 		$this->dateOfBirth = $dateOfBirth;
-	}
+	}*/
 }//user class ends 
 
 ?>
