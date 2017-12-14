@@ -86,8 +86,8 @@
 
 			<nav class="menu-list">
 				<a href=<?php echo HOME_PAGE ?> >HOME</a>
-				<a href=<?php echo H_EXPENSE_SERVICE ?> >Household Expense</a>
-				<a href=<?php echo P_EXPENSE_SERVICE ?> >Personal Expense</a>
+				<a href="" >Household Expense</a>
+				<a href="">Personal Expense</a>
 				<a href=<?php echo ACCOUNT_SERVICE ?> >My Account</a>
 				<a href=<?php echo LOGOUT_SERVICE ?> >Logout</a>
 				
@@ -99,34 +99,34 @@
 		<div style="background: orange">
 			<!--Form to recieve user's entries-->
 			<div class="exp-form-div">
-				<form action="" method="GET">
+				<form action="<?php echo EXPENSE_SERVICE ?>" method="POST">
 					<fieldset>
 						<legend>Expense data:</legend>
 						<div>
-							<label for="exp-category"> Category: </label>
+							<label for="category"> Category: </label>
 							<input type="text" name="category" id="exp-category">
 						</div>
 
 						
 						<div>
-							<label for="exp-item"> Item: </label>
+							<label for="item"> Item: </label>
 							<input type="text" name="item" id="exp-item"> 
 						</div>
 
 
 						<div>
-							<label for="exp-value"> value: </label>
-							<input type="numeric" name="value" id="exp-value">
+							<label for="amount"> value: </label>
+							<input type="numeric" name="amount" id="exp-value">
 						</div>
 
 						<div>
 							<label for="exp-date"> Date: </label>
-							<input type="date" name="datetime" id="exp-date">
+							<input type="date" name="dateIncurred" id="exp-date">
 						</div>		
 
 						<div>
 							<label for="exp-type"> Expense Type: </label>
-							<select id="choose_expense" name="expense_type" id="exp-type">
+							<select id="choose_expense" name="type" id="exp-type">
 								<option>Household Expense</option>
 								<option>Personal Expense</option>
 							</select>
