@@ -12,8 +12,8 @@ require $_SERVER['DOCUMENT_ROOT']."/env_params/global_functions.php";
 require "db_services.php";
 
 //retreive user login information 
-$username = $_GET["username"];
-$password = $_GET["password"];
+$username = $_POST["username"];
+$password = $_POST["password"];
 
 /*Function to authenticate user's credentials*/
 function authCredential($username, $password){
