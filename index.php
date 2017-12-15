@@ -20,40 +20,77 @@
 		session_destroy();
 	?>
 
+	<style type="text/css">
+		section{
+			background: red;
+			margin: 0, auto; 
+		}
+		.login_div{
+			background: red;
+			margin-left: 30%;
+			margin-right: 30%;
+		}
+
+
+		#login_form{
+			background: yellow;
+			display: table;
+			margin-top: 30%;
+		}
+
+		#login_fieldset p  {
+
+			display: table-row;	
+		}
+
+		#login_fieldset label, 
+		#login_fieldset input{
+			display: table-cell;
+			margin: 10px;
+		}
+
+	</style>
+
 </head>
+
 
 <body>
 <!--Application Menu-->
+
 <div>
 	
 </div>
 
 <!--LOGIN INPUT -->
-<div>
-	<div>
-		<form action = <?php echo LOGIN_SERVICE ?> method="POST">
-			<div>
-				<input type="text" name="username" placeholder="USERNAME">
-			</div>
+<section >
+	<div class=login_div>
+		<form id="login_form" action = <?php echo LOGIN_SERVICE ?> method="POST">
+			<fieldset id="login_fieldset">
+				
+				<legend> Account Login </legend>
 
-			<div>
-				<input type="password" name="password" placeholder="PASSWORD">
-			</div>
+				<p>
+					<label for="username"> Username: </label>
+					<input type="text" name="username" id="username">
+				</p>
 
-			<div>
-				<input value="login" type="submit">
-			</div>
+				<p>
+					<label for="password">Password</label>
+					<input type="password" name="password" id="password">
+				</p>
 
-			<div>
-				<!--link to signup page --> 
-				<a href="<?php echo SIGNUP_PAGE ?>">create account</a>
-			</div>
+				<p>
+					<input value="login" type="submit">
+				</p>
 
-		</form>
-
-	
+			</fieldset>
+			
+			<!--link to signup page --> 
+			<p>Don't have an account? <a href="<?php echo SIGNUP_PAGE ?>">create account</a></p>
+		</form>	
 	</div>
-</div>
+
+</section>
 
 </body>
 </html>
