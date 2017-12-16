@@ -34,7 +34,7 @@
 		// 		 username, to make sure user went throught the 
 		// 		 authentication procedure. 
 		if(array_key_exists("username", $_SESSION) == true){
-			echo $_SESSION["username"]; 
+			echo 'Hello '.$_SESSION["username"].'!'; 
 			//print_r($_SESSION);
 		}else{
 			//go back to login page
@@ -47,7 +47,8 @@
 		
 		function ajaxRequest(){
 			document.getElementById("demo").innerHTML = "You clicked"; 
-			var xmlhttpReq = new xmlhttpRequest();
+			
+			/*var xmlhttpReq = new xmlhttpRequest();
 			xmlhttpReq.onreadystatechange = function(){
 
 				if(this.readState==4 && this.status == 200){
@@ -55,7 +56,7 @@
 				}
 				xmlhttpReq.open("POST" "<?php ACCOUNT_SERVICE ?>", true );
 				xmlhttpReq.send();
-			}
+			}*/
 		}
 	</script>
 
@@ -151,11 +152,7 @@
 
 						</div>	
 				</form> <!--Form Ends-->
-			<div id="demo_div">
-				<button onclick="ajaxRequest()" >Change Data </button>
 
-				<h1 id="demo">Right here guys</h1>
-			</div>
 	</div>
 
 </body>

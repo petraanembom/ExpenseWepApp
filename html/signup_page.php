@@ -7,6 +7,8 @@
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+	<script type="text/javascript" src="../js/AccountService.js"></script>
+
 	<!-- Specify required php scrips-->
 	<?php
 	 //TODO:make sure file is not being used (ie opened) by another 
@@ -62,19 +64,22 @@
 
 					<div>
 					<label> Firstname </label>
-					<input type="text" name="firstname" placeholder="FIRST NAME" class="form-control">
+					<input type="text" name="firstname" placeholder="FIRST NAME" 
+						   class="form-control" id="firstname">
 
 					</div>
 
 					<div>
 
 						<label> Lastname </label>
-						<input type="text" name="lastname" placeholder="LAST NAME" class="form-control"> 
+						<input type="text" name="lastname" placeholder="LAST NAME" 
+							   class="form-control" id="lastname"> 
 					</div>
 
 					<div>
 						<label> Username </label>
-					 	<input type="text" name="username" placeholder="USERNAME" class="form-control"> 
+					 	<input type="text" name="username" placeholder="USERNAME" 
+					 		   class="form-control" id="username" > 
 					 </div>
 
 					<!--div>
@@ -83,17 +88,19 @@
 					
 					<div>
 						<label> Email </label>
-						<input type="email" name="email" placeholder="EMAIL" class="form-control">
+						<input type="email" name="email" placeholder="EMAIL" 
+								class="form-control" id="email">
 					</div>
 
 					<div>
 						<label> Password </label>
-						<input type="password" name="password" placeholder="PASSWORD" class="form-control"> 
+						<input type="password" name="password" placeholder="PASSWORD" class="form-control" id="password"> 
 					</div>
 
 					<div>
 						<label> Re-password </label>
-						<input type="password" name="re-password" placeholder="RE-PASSWORD" class="form-control">
+						<input type="password" name="re-password" placeholder="RE-PASSWORD" 
+							class="form-control" id="re_password" >
 					</div>
 
 					<div>
@@ -104,10 +111,10 @@
 					<div>
 						<a href='<?php echo INDEX_PAGE ?>' "> cancel </a>
 					</div>
-								
+					
+					<div id="msg_div"> </div>		
 			</form>
-
-		</div>
+				
 	</div>
 
 </body>

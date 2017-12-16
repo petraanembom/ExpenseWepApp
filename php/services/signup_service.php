@@ -25,7 +25,7 @@ function registerUserAccount($user){
     //TODO:add date_join and date_of_birth to the table
 
     //prepare a query statement for writing user's information to data base
-	$prepareStmt = $conn->prepare("INSERT INTO users (firstname, lastname, username, email, password ) VALUES (:firstname, :lastname, :username, :email, :password)");
+	$prepareStmt = $conn->prepare("INSERT INTO user (firstname, lastname, username, email, password ) VALUES (:firstname, :lastname, :username, :email, :password)");
 
 	$prepareStmt->bindParam('firstname', $user->getFirstname());
 	$prepareStmt->bindParam('lastname', $user->getLastname());

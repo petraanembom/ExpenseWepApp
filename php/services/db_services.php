@@ -55,7 +55,7 @@ class DataSource{
 		// server side script to validate the format of the input 
 		// This is to prevent SQL injection attacks 
 		
-		$querryStmt = "SELECT username, password FROM users WHERE username='$username' AND password = '$password'"; 
+		$querryStmt = "SELECT username, password FROM user WHERE username='$username' AND password = '$password'"; 
 
 		//check if connection is oppen
 		if($conn != NULL) {
@@ -68,9 +68,7 @@ class DataSource{
 				
 			  //TODO retrieve the login information and check
 			  //if the username and password do match
-
 			 return true;
-
 			}
 
 			/*foreach ($result = $conn->query($querryStmt) as $row){
