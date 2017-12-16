@@ -15,7 +15,8 @@
 <!--HTML head --> 
 <head>
 	<title>home page</title>
-
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<!--
 		*specify all required dependencies
 	    *check if user was authenticated
@@ -41,39 +42,54 @@
 		}//else if ends 
 	?>
 
+	<!--javascript-->
+	<script type="text/javascript">
+		
+		function ajaxRequest(){
+			document.getElementById("demo").innerHTML = "You clicked"; 
+			var xmlhttpReq = new xmlhttpRequest();
+			xmlhttpReq.onreadystatechange = function(){
+
+				if(this.readState==4 && this.status == 200){
+					document.getElementById("demo_div").innerHTML = this.responseXML; 
+				}
+				xmlhttpReq.open("POST" "<?php ACCOUNT_SERVICE ?>", true );
+				xmlhttpReq.send();
+			}
+		}
+	</script>
+
 	<!--apply css-->
 	<style type="text/css">
+
+
 		.menu-list{
-			background: green;
-			padding: 2%;
+			background: #1c3a59;
 			margin-bottom: 20px;	
 		}
 
 		.menu-list > a{
-			background: yellow;
+			background: white;
 			text-align: center;
 			margin: 1%;
-			padding: 1%;
 		}
-		/*Move the logout menu item far right*/
-		/*#logout-menu-item{
-			margin-left: 50%; 
-		}*/
 
-		/*style the expense-entry form*/
-		form{
-			display: table;
-			margin: 0 auto;
+		#logout_btn{
+			float: right;
+		}
+		#expense_form{
+			width: 40%;
+			background: #e8eaed;
+			margin-left: 20px;
+
+			max-width: 400px;
 		}
 
 		form div {
-			display: table-row;
-		}
-
-		form label, form input {
-			display: table-cell;
 			margin-bottom: 10px; 
 		}
+
+
 
 	</style>
 
@@ -81,66 +97,65 @@
 
 <!--HTML BODY-->
 <body>
-	<div style="background: pink">
+	<div >
 		<div style="background: purple">
 
 			<nav class="menu-list">
-				<a href=<?php echo HOME_PAGE ?> >HOME</a>
-				<a href="" >Household Expense</a>
-				<a href="">Personal Expense</a>
-				<a href=<?php echo ACCOUNT_SERVICE ?> >My Account</a>
-				<a href=<?php echo LOGOUT_SERVICE ?> >Logout</a>
+				<a href=<?php echo HOME_PAGE ?>  class="btn btn-link">HOME</a>
+				<a href="" class="btn btn-link" >Household Expense</a>
+				<a href="" class="btn btn-link">Personal Expense</a>
+				<a href=<?php echo ACCOUNT_SERVICE ?> class="btn btn-link" >My Account</a>
+			
+				<a href=<?php echo LOGOUT_SERVICE ?> id="logout_btn" class="btn btn-link" >Logout</a>
 				
 			</nav>
 			
 		</div>
 
 
-		<div style="background: orange">
 			<!--Form to recieve user's entries-->
-			<div class="exp-form-div">
-				<form action="<?php echo EXPENSE_SERVICE ?>" method="POST">
-					<fieldset>
-						<legend>Expense data:</legend>
+				<form action="<?php echo EXPENSE_SERVICE ?>" method="POST" class="form-horizontal" id="expense_form">
 						<div>
-							<label for="category"> Category: </label>
-							<input type="text" name="category" id="exp-category">
+							<label for="exp-category"> Category: </label>
+							<input  class="form-control"  type="text" name="category" id="exp-category">
 						</div>
 
 						
 						<div>
-							<label for="item"> Item: </label>
-							<input type="text" name="item" id="exp-item"> 
+							<label for="exp-item"> Item: </label>
+							<input class="form-control"  type="text" name="item" id="exp-item"> 
 						</div>
 
 
-						<div>
-							<label for="amount"> value: </label>
-							<input type="numeric" name="amount" id="exp-value">
+						<div >
+							<label for="exp-value"> value: </label>
+							<input  class="form-control" type="numeric" name="amount" id="exp-value">
 						</div>
 
 						<div>
 							<label for="exp-date"> Date: </label>
-							<input type="date" name="dateIncurred" id="exp-date">
+							<input class="form-control"  type="date" name="dateIncurred" id="exp-date">
 						</div>		
 
 						<div>
 							<label for="exp-type"> Expense Type: </label>
-							<select id="choose_expense" name="type" id="exp-type">
+							<select class="form-control" id="choose_expense" name="type" id="exp-type">
 								<option>Household Expense</option>
 								<option>Personal Expense</option>
 							</select>
 						</div>											
-						<div>
-							<input type="submit" name="Add Expense">
+						<div id="add_btn_div">
+							<input class="btn btn-warning btn-md" type="reset" value="Clear Entry">
+
+							<input style="float: right" class="btn btn-primary btn-md" type="submit" value="Add Expense">
+
 						</div>	
-
-					</fieldset>
-					
 				</form> <!--Form Ends-->
-			</div> <!--div > Form Ends-->
+			<div id="demo_div">
+				<button onclick="ajaxRequest()" >Change Data </button>
 
-		</div>
+				<h1 id="demo">Right here guys</h1>
+			</div>
 	</div>
 
 </body>

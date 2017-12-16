@@ -9,6 +9,8 @@
 <head>
 
 	<title>welcome</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 	<!-- Specify required php scrips-->
 	<?php
@@ -21,33 +23,42 @@
 	?>
 
 	<style type="text/css">
-		section{
-			background: red;
-			margin: 0, auto; 
+		body{
+			background: #1c3a59;
 		}
 		.login_div{
+
 			background: red;
-			margin-left: 30%;
-			margin-right: 30%;
+			display: flex;   
 		}
-
-
-		#login_form{
-			background: yellow;
+		#login_div{
+			position: absolute;
+			top: 20%;
+			left: 15%;
+		
+			background: #ffffff;
 			display: table;
-			margin-top: 30%;
+			height: 60%;
+			width: 60%;
+
+			max-height: 550px;
+			max-width: 450px;
+
+			padding: 10px;
+			
 		}
 
-		#login_fieldset p  {
-
-			display: table-row;	
+		#form_div div{
+			margin-bottom: 10%;
+		}
+		#facebook_gmail_div{
+			margin-left: 1%;
+			margin-right: 1%;
+			margin-bottom: 10%;
+			margin-top: 10%;
 		}
 
-		#login_fieldset label, 
-		#login_fieldset input{
-			display: table-cell;
-			margin: 10px;
-		}
+
 
 	</style>
 
@@ -62,35 +73,48 @@
 </div>
 
 <!--LOGIN INPUT -->
-<section >
-	<div class=login_div>
-		<form id="login_form" action = <?php echo LOGIN_SERVICE ?> method="POST">
-			<fieldset id="login_fieldset">
+	<div id=login_div>
+
+		<div id="facebook_gmail_div" class="row">
+			<input class="btn btn-primary" value="Gmail" type="" style="background: #ed4040">
+			<input class="btn btn-primary" value=" Facebook" type="" style="background: #427af4;float: right; ">
+		</div>			
 				
-				<legend> Account Login </legend>
+		<div id="form_div">
+		   <form class="form-horizontal" id="login_form" action = <?php echo LOGIN_SERVICE ?> method="POST">
+				
 
-				<p>
+				<div>
 					<label for="username"> Username: </label>
-					<input type="text" name="username" id="username">
-				</p>
+					<input class="form-control" type="text" name="username" id="username">
+				</div>
 
-				<p>
+				<div>
 					<label for="password">Password</label>
-					<input type="password" name="password" id="password">
-				</p>
+					<input class="form-control" type="password" name="password" id="password">
+				</div>
 
-				<p>
-					<input value="login" type="submit">
-				</p>
+				<div class="checkbox">
+					<label for="checkbox">
+					<input type="checkbox" name="checkbox" id="checkbox"> 
+					Remember me</label>
 
-			</fieldset>
+				</div>
+
+				<div>
+					<input class="btn btn-primary btn-block" value="login" type="submit">
+
+				</div>
 			
+
 			<!--link to signup page --> 
-			<p>Don't have an account? <a href="<?php echo SIGNUP_PAGE ?>">create account</a></p>
+			<div>Don't have an account? <a href="<?php echo SIGNUP_PAGE ?>">create account</a>
+			</div>
 		</form>	
+
 	</div>
 
-</section>
 
+	</div>
 </body>
 </html>
