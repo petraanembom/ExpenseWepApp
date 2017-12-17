@@ -10,9 +10,19 @@ require $_SERVER['DOCUMENT_ROOT'].EXPENSE_MODEL;
 
 require 'db_services.php';
 
+/**
+*  
+*/
+class ExpenseService
+{
+	
+	function __construct()
+	{
+		# code...
+	}
 
-echo "expense service \r";
-
+	
+}//ExpenseService Class Ends 
 
 /******************************************************************************
 *saveExpense(): This function is used to enter expense data into the database. 
