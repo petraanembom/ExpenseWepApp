@@ -17,6 +17,9 @@
 	<title>home page</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
 	<!--
 		*specify all required dependencies
 	    *check if user was authenticated
@@ -42,24 +45,6 @@
 		}//else if ends 
 	?>
 
-	<!--javascript-->
-	<script type="text/javascript">
-		
-		function ajaxRequest(){
-			document.getElementById("demo").innerHTML = "You clicked"; 
-			
-			/*var xmlhttpReq = new xmlhttpRequest();
-			xmlhttpReq.onreadystatechange = function(){
-
-				if(this.readState==4 && this.status == 200){
-					document.getElementById("demo_div").innerHTML = this.responseXML; 
-				}
-				xmlhttpReq.open("POST" "<?php ACCOUNT_SERVICE ?>", true );
-				xmlhttpReq.send();
-			}*/
-		}
-	</script>
-
 	<!--apply css-->
 	<style type="text/css">
 
@@ -72,20 +57,46 @@
 		.menu-list > a{
 			background: white;
 			text-align: center;
-			margin: 1%;
+			margin-left: 1%;
+			margin-right: 1%;
+			margin-top: 2%;
 		}
 
 		#logout_btn{
 			float: right;
 		}
-		#expense_form{
-			width: 40%;
+		#expense_form, #date_view {
+			width: 90%;
 			background: #e8eaed;
 			margin-left: 20px;
-
+		}
+		#hidden_exp_form{
+			visibility: collapse;
+		}
+		#side_menu{
+			width: 40%;
+			background: #e8eaed;
+			margin: 1%;
 			max-width: 400px;
 		}
 
+		#menu_display_body{
+			background: #1c3a59;
+		}
+		.chartist{
+			width: 90%;
+		}
+
+		#data_display_div, #data_display{
+			background: white;
+			margin-top: 1%;
+			margin-left: 1%;
+			margin-right: 1%;
+		}
+
+		#menu_display_body{
+
+		}
 		form div {
 			margin-bottom: 10px; 
 		}
@@ -110,48 +121,110 @@
 				<a href=<?php echo LOGOUT_SERVICE ?> id="logout_btn" class="btn btn-link" >Logout</a>
 				
 			</nav>
-			
-		</div>
+			</div>
+		<section id="menu_display_body" class="row">
 
+			<div id="side_menu" class="col-md-1">
 
-			<!--Form to recieve user's entries-->
-				<form action="<?php echo EXPENSE_SERVICE ?>" method="POST" class="form-horizontal" id="expense_form">
+				<form action="<?php echo EXPENSE_SERVICE ?>" method="POST" class="form-horizontal" id="date_view">
 						<div>
-							<label for="exp-category"> Category: </label>
-							<input  class="form-control"  type="text" name="category" id="exp-category">
+							<label for="exp-category"> Start Date: </label>
+							<input  class="form-control"  type="Date" name="category" id="exp-category">
 						</div>
 
 						
 						<div>
-							<label for="exp-item"> Item: </label>
-							<input class="form-control"  type="text" name="item" id="exp-item"> 
+							<label for="end_date"> End Date: </label>
+							<input class="form-control"  type="Date" name="to date" id="end_date"> 
 						</div>
+										
+				</form> <!--Form Ends-->
 
-
-						<div >
-							<label for="exp-value"> value: </label>
-							<input  class="form-control" type="numeric" name="amount" id="exp-value">
-						</div>
+			<!--Form to recieve user's entries-->
+				<form action="<?php echo EXPENSE_SERVICE ?>" method="POST" class="form-horizontal" id="expense_form">
 
 						<div>
-							<label for="exp-date"> Date: </label>
-							<input class="form-control"  type="date" name="dateIncurred" id="exp-date">
-						</div>		
+							<input type="button" name="" value="New Expense" class="btn btn-primary" onclick="document.getElementById('hidden_exp_form').style.visibility='visible'">
+						</div>
 
-						<div>
-							<label for="exp-type"> Expense Type: </label>
-							<select class="form-control" id="choose_expense" name="type" id="exp-type">
-								<option>Household Expense</option>
-								<option>Personal Expense</option>
-							</select>
-						</div>											
-						<div id="add_btn_div">
-							<input class="btn btn-warning btn-md" type="reset" value="Clear Entry">
+						<div id="hidden_exp_form">
+							<div>
+								<label for="exp-category"> Category: </label>
+								<input  class="form-control"  type="text" name="category" id="exp-category">
+							</div>
 
-							<input style="float: right" class="btn btn-primary btn-md" type="submit" value="Add Expense">
+							
+							<div>
+								<label for="exp-item"> Item: </label>
+								<input class="form-control"  type="text" name="item" id="exp-item"> 
+							</div>
 
+
+							<div >
+								<label for="exp-value"> value: </label>
+								<input  class="form-control" type="numeric" name="amount" id="exp-value">
+							</div>
+
+							<div>
+								<label for="exp-date"> Date: </label>
+								<input class="form-control"  type="date" name="dateIncurred" id="exp-date">
+							</div>		
+
+							<div>
+								<label for="exp-type"> Expense Type: </label>
+								<select class="form-control" id="choose_expense" name="type" id="exp-type">
+									<option>Household Expense</option>
+									<option>Personal Expense</option>
+								</select>
+							</div>											
+							<div id="add_btn_div">
+								<input class="btn btn-warning btn-md" type="reset" value="Clear Entry">
+
+								<input style="float: right" class="btn btn-primary btn-md" type="submit" value="Add Expense">
+
+							</div>
 						</div>	
 				</form> <!--Form Ends-->
+			</div>
+			
+			<div id="data_display_div" class="col-md-3">
+				<div class="chartist ct-chart ct-square"></div>
+				<!--javascript-->
+				<script type="text/javascript">
+					var data = {
+					  // A labels array that can contain any sort of values
+					  labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+					  // Our series array that contains series objects or in this case series data arrays
+					  series: [
+					    [5, 2, 4, 2, 0]
+					  ]
+					};
+
+					// Create a new line chart object where as first parameter we pass in a selector
+					// that is resolving to our chart container element. The Second parameter
+					// is the actual data object.
+					new Chartist.Line('.ct-chart', data);
+				</script>
+			</div>
+
+			<div id="data_display" class="col-md-3">
+				<div class="chartist cty-chart ct-square"></div>
+				<!--javascript-->
+				<script type="text/javascript">
+					var data = {
+					  // A labels array that can contain any sort of values
+					  labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+					  // Our series array that contains series objects or in this case series data arrays
+					  series: [
+					    [5, 2, 4, 2, 0]
+					  ]
+					};
+					new Chartist.Bar('.cty-chart', data);
+				</script>
+			</div>
+
+
+		</section>
 
 	</div>
 
